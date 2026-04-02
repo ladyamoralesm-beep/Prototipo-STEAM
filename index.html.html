@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Prototipo STEAM interactivo</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f8fc;color:#233042}
+header{background:linear-gradient(135deg,#1f6fc9,#1a56a5);color:#fff;padding:28px 40px}
+main{max-width:1000px;margin:24px auto;padding:0 18px}
+.card{background:#fff;border-radius:18px;padding:22px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+button{background:#1f6fc9;color:#fff;border:none;border-radius:10px;padding:10px 16px;cursor:pointer}
+.option{display:block;margin:8px 0;padding:10px;border:1px solid #dbe4ef;border-radius:10px}
+.badge{display:inline-block;background:#e7f3ff;color:#174d8c;padding:5px 10px;border-radius:999px;font-size:12px}
+</style></head>
+<body>
+<header><h1>Prototipo interactivo STEAM</h1>
+<p>Psicología del aprendizaje - Estrategias didácticas y resolución de residuos electrónicos en la universidad</p></header>
+<main>
+<div class="card"><span class="badge">Problema</span><h2>Situación detonadora</h2>
+<p>La universidad no cuenta con una cultura consolidada para reducir, clasificar y reutilizar residuos electrónicos.</p></div>
+<div class="card"><span class="badge">Quiz</span><h2>Micro-reto</h2>
+<p>¿Qué acción debería implementarse primero?</p>
+<label class="option"><input type="radio" name="q" value="A"> Campaña informativa sin diagnóstico previo</label>
+<label class="option"><input type="radio" name="q" value="B"> Diagnóstico de puntos críticos y hábitos de uso</label>
+<label class="option"><input type="radio" name="q" value="C"> Compra inmediata de nuevos equipos</label>
+<button onclick="check()">Ver retroalimentación</button>
+<p id="fb"></p></div>
+<div class="card"><span class="badge">Cierre</span><h2>Producto final</h2>
+<p>Infografía interactiva + micropropuesta de intervención con base en evidencia, rúbrica y autoevaluación.</p></div>
+</main>
+<script>
+function check(){
+  const v=document.querySelector('input[name=q]:checked');
+  const fb=document.getElementById('fb');
+  if(!v){fb.textContent='Selecciona una opción para recibir retroalimentación.';return;}
+  if(v.value==='B'){fb.textContent='Correcto. El diagnóstico inicial permite tomar decisiones pedagógicas y técnicas basadas en evidencia.';}
+  else{fb.textContent='Aún no. Revisa la microlectura: en proyectos STEAM, la solución debe partir de datos y comprensión situada del problema.';}
+}
+</script>
+</body></html>
